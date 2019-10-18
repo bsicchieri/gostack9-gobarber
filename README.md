@@ -3,7 +3,7 @@
 GoStack is a practical, intensive online bootcamp training. GoStack goes deep into NodeJS, ReactJS and React Native technologies, and the entire ecosystem around these tools, from scratch to deploy. Including automated testing, continuous integration, store publishing, and all major libraries and frameworks.
 
 <h1 align="center">
-    <img alt="GoStack" src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/bootcamp-header.png" width="200px" />
+    <img alt="GoStack" src=".github/logo.png" width="200px" />
 </h1>
 
 <h3 align="center">
