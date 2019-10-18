@@ -3,14 +3,8 @@
 </h1>
 
 <h3 align="center">
-  Conceitos do NodeJS
+  Developed during Bootcamp GoStack Rocketseat
 </h3>
-
-<p align="center">
-  <a href="#rocket-sobre-o-desafio">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-entrega">Entrega</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
-</p>
 
 ## About
 
