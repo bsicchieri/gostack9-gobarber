@@ -8,7 +8,11 @@ const users = ['Bruno', 'Julia', 'Marcelo'];
 
 //middleware
 server.use((req, res, next) => {
-  console.log('A requisição foi chamada!');
+  console.log(`Método: ${req.method}; URL: ${req.url}`);
+
+  return next();
+
+  console.log('Finalizou!');
 });
 
 //listar todos os usuários
