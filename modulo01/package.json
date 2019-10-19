@@ -2,7 +2,7 @@
   "name": "modulo01",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/bsicchieri/gostack9-challenge1.git",
+  "repository": "https://github.com/bsicchieri/gostack9",
   "author": "bsicchieri <brunosicchieri@hotmail.com>",
   "license": "MIT",
   "scripts": {
