@@ -2,9 +2,16 @@ const express = require('express');
 
 const server = express();
 
-const users = ['Bruno', 'Julia', 'Gabriel'];
+server.use(express.json());
 
-//localhost:3000
+const users = ['Bruno', 'Julia', 'Marcelo'];
+
+//listar todos os usuários
+server.get('/users', (req, res) => {
+  return res.json(users);
+})
+
+//listar um usuário
 server.get('/users/:index', (req, res) => {
   const { index } = req.params;
 
@@ -17,5 +24,33 @@ server.get('/users/:index', (req, res) => {
   //const nome = req.query.nome;
   //return res.json({ message: `Hello ${nome}` });
 })
+
+//criar usuário
+server.post('/users', (req, res) => {
+  const { name } = req.body;
+
+  users.push(name);
+
+  return res.json(users);
+});
+
+//alterar usuário
+server.put('/users/:index', (req, res) => {
+  const { index } = req.params;
+  const { name } = req.body;
+
+  users[index] = name;
+
+  return res.json(users);
+});
+
+//deletar usuário
+server.delete('/users/:index', (req, res) => {
+  const { index } = req.params;
+
+  users.splice(index, 1);
+
+  return res.send();
+});
 
 server.listen(3000);
