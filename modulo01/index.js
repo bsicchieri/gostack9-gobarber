@@ -42,8 +42,6 @@ server.get('/users', (req, res) => {
   return res.json(users);
 })
 
-//teste
-
 //listar um usuário
 server.get('/users/:index', checkUserInArray, (req, res) => {
   const { index } = req.params;
