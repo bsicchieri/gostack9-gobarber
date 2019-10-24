@@ -1,4 +1,4 @@
-//Starting GoBarber Backend
+// Starting GoBarber Backend
 
 import express from 'express';
 import routes from './routes';
