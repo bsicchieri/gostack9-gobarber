@@ -17,18 +17,22 @@ class SessionController {
       return res.status(400).json({ errorr: 'Validation fails' });
     }
 
+    // verificar se existe um usuário com esse email
     const { email, password } = req.body;
 
     const user = await User.findOne({ where: { email } });
 
+    // verificar se o usuário não existe
     if (!user) {
       return res.statis(401).json({ error: 'User not found' });
     }
 
+    // verificar se as senhas não combinam
     if (!(await user.checkPassword(password))) {
       return res.status(401).json({ error: 'Password does not match' });
     }
 
+    // campos que serão retornados
     const { id, name } = user;
 
     return res.json({

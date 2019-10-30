@@ -29,6 +29,8 @@ class User extends Model {
     return this;
   }
 
+  // verificar se a senha que ele está usando para logar
+  // é a senha correta já armazenada
   checkPassword(password) {
     return bcrypt.compare(password, this.password_hash);
   }
