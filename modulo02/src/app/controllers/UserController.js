@@ -3,6 +3,7 @@ import User from '../models/User';
 
 class UserController {
   async store(req, res) {
+    // validações
     const schema = Yup.object().shape({
       name: Yup.string().required(),
       email: Yup.string()
@@ -13,6 +14,7 @@ class UserController {
         .min(6),
     });
 
+    // verificar se as informações batem com a validação
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ errorr: 'Validation fails' });
     }
@@ -37,6 +39,7 @@ class UserController {
 
   // alteração dos dados cadastrais
   async update(req, res) {
+    // validações
     const schema = Yup.object().shape({
       name: Yup.string(),
       email: Yup.string().email(),
@@ -51,6 +54,7 @@ class UserController {
       ),
     });
 
+    // verificar se as informações batem com a validação
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ errorr: 'Validation fails' });
     }

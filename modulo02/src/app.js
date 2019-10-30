@@ -1,5 +1,3 @@
-// Starting GoBarber Backend
-
 // importando o express
 import express from 'express';
 
