@@ -1,3 +1,6 @@
+// exportar os caminhos e pastas dos arquivos criados
+
+//padronizar os caminhos
 const { resolve } = require('path');
 
 module.exports = {
@@ -5,4 +8,4 @@ module.exports = {
   'models-path': resolve(__dirname, 'src', 'app', 'models'),
   'migrations-path': resolve(__dirname, 'src', 'database', 'migrations'),
   'seeders-path': resolve(__dirname, 'src', 'database', 'seeds'),
-}
+};
