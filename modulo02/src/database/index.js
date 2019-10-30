@@ -1,3 +1,4 @@
+// sequelize - responsável pela conexão com o banco
 import Sequelize from 'sequelize';
 
 import User from '../app/models/User';
@@ -11,6 +12,7 @@ class Database {
     this.init();
   }
 
+  // conexão com a base de dados e carregar os models
   init() {
     this.connection = new Sequelize(databaseConfig);
 
