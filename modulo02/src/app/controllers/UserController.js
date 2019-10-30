@@ -35,6 +35,7 @@ class UserController {
     });
   }
 
+  // alteração dos dados cadastrais
   async update(req, res) {
     const schema = Yup.object().shape({
       name: Yup.string(),
@@ -70,6 +71,7 @@ class UserController {
       return res.status(401).json({ error: 'Password does not match!' });
     }
 
+    // campos que serão retornados
     const { id, name, provider } = await user.update(req.body);
 
     return res.json({
