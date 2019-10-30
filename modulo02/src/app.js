@@ -1,11 +1,14 @@
 // Starting GoBarber Backend
 
+// importando o express
 import express from 'express';
+
 import routes from './routes';
 
 import './database';
 
 class App {
+  // constructor - executado sempre que a classe for chamada
   constructor() {
     this.server = express();
 
