@@ -3,6 +3,7 @@
 // importando o express
 import express from 'express';
 
+// importando as rotas de outro arquivo
 import routes from './routes';
 
 import './database';
