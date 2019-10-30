@@ -16,12 +16,16 @@ class User extends Model {
       }
     );
 
+    // executado antes de qualquer usuário ser salvo no BD
     this.addHook('beforeSave', async user => {
+      // verificar se está cadastrando ou alterando a senha
       if (user.password) {
+        // gerar password hash
         user.password_hash = await bcrypt.hash(user.password, 8);
       }
     });
 
+    // retornar o model que acabou de ser inicializado
     return this;
   }
 
