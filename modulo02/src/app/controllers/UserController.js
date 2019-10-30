@@ -17,6 +17,7 @@ class UserController {
       return res.status(400).json({ errorr: 'Validation fails' });
     }
 
+    // verifica se já não existe um usuário com o email
     const userExists = await User.findOne({ where: { email: req.body.email } });
 
     if (userExists) {
@@ -24,9 +25,6 @@ class UserController {
     }
 
     const { id, name, email, provider } = await User.create(req.body);
-
-    // const user = await User.create(req.body);
-    // return res.json(user);
 
     return res.json({
       id,
