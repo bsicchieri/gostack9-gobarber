@@ -55,10 +55,14 @@ class UserController {
       return res.status(400).json({ errorr: 'Validation fails' });
     }
 
+    // busca
     const { email, oldPassword } = req.body;
 
+    // busca o usuário que será editado
     const user = await User.findByPk(req.userId);
 
+    // verifica se o email que ele quer alterar for diferente
+    // do email que ele já possui
     if (email !== user.email) {
       const userExists = await User.findOne({ where: { email } });
 
@@ -67,13 +71,15 @@ class UserController {
       }
     }
 
+    // verifica se a senha antiga é igual a senha que ele já possui
     if (oldPassword && !(await user.checkPassword(oldPassword))) {
       return res.status(401).json({ error: 'Password does not match!' });
     }
 
-    // campos que serão retornados
+    // atualizar o usuário
     const { id, name, provider } = await user.update(req.body);
 
+    // campos que serão retornados
     return res.json({
       id,
       name,
