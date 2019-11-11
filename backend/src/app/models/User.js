@@ -29,6 +29,10 @@ class User extends Model {
     return this;
   }
 
+  static associate(models) {
+    this.belongsTo(models.File, { foreignKey: 'avatar_id' });
+  }
+
   // verificar se a senha que ele está usando para logar
   // é a senha correta já armazenada
   checkPassword(password) {
