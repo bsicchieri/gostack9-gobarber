@@ -6,10 +6,7 @@ import User from '../models/User';
 class AppointmentController {
   async index(req, res) {
     const appointments = await Appointment.findAll({
-      where: {
-        user_id: req.userId,
-        canceled_at: null,
-      },
+      where: { user_id: req.userId, canceled_at: null },
     });
 
     return res.json(appointments);
