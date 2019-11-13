@@ -4,6 +4,17 @@ import Appointment from '../models/Appointment';
 import User from '../models/User';
 
 class AppointmentController {
+  async index(req, res) {
+    const appointments = await Appointment.findAll({
+      where: {
+        user_id: req.userId,
+        canceled_at: null,
+      },
+    });
+
+    return res.json(appointments);
+  }
+
   async store(req, res) {
     const schema = Yup.object().shape({
       provider_id: Yup.number().required(),
@@ -27,8 +38,7 @@ class AppointmentController {
         .json({ error: 'You can only create appointments with providers!' });
     }
 
-    // parseISO transforma a string de data e hora
-    // em um obj date do JS
+    // parseISO transforma a string de data e hora em um obj date do JS
     // startOfHour pega apenas o início da hora, sem min e seg
     const hourStart = startOfHour(parseISO(date));
 
